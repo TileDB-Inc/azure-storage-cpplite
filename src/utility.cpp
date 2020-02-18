@@ -8,7 +8,7 @@
 #define WIN32_LEAN_AND_MEAN
 #include <Windows.h>
 #else
-#include <uuid/uuid.h>
+//#include <uuid/uuid.h>
 #include <sys/stat.h>
 #include <sys/types.h>
 #include <fcntl.h>
@@ -26,6 +26,7 @@ namespace azure {  namespace storage_lite {
         return str;
     }
 
+/*
     std::string get_uuid()
     {
         std::string res;
@@ -45,6 +46,12 @@ namespace azure {  namespace storage_lite {
 #endif
 
         return res;
+    }
+*/
+
+    std::string get_uuid() {
+      std::cerr << "azure::storage_lite::get_uuid() unimplemented" << std::endl;
+      exit(1);
     }
 
     bool create_or_resize_file(const std::string& path, unsigned long long length) noexcept
